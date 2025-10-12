@@ -6,9 +6,10 @@ import { AuthModule } from './Auth/Auth.module';
 import { TestModule } from './test/test.module';
 import { PipeModule } from './Pipes/Pipes.module';
 import { ClassValidatorsModule } from './ClassValidators/ClassValidators.module';
+import { MappedTypesModule } from './MappedTypes/MappedTypes.module';
 
 @Module({
-  imports: [AuthModule, TestModule, PipeModule, ClassValidatorsModule],
+  imports: [AuthModule, TestModule, PipeModule, ClassValidatorsModule, MappedTypesModule],
   controllers: [AppController],
   providers: [AppService],
 })
