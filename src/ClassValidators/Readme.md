@@ -1,9 +1,3 @@
-Zo‘r! 🔥 Juda yaxshi yo‘nalishda ketyapsiz, Jamshid 😎
-Keling, **`class-validator`** ni **0 dan** — oddiy tushunchadan tortib, **amaliy ishlatishgacha** o‘rgatamiz.
-Men buni **bosqichma-bosqich**, oddiy tilda, real misollar bilan tushuntiraman 👇
-
----
-
 # 🧱 1. `class-validator` nima?
 
 `class-validator` — bu **Node.js va TypeScript** uchun yozilgan **validatsiya kutubxonasi** bo‘lib,
@@ -241,6 +235,3 @@ Natija:
 > `class-validator` — bu sizning ilovangizda **ma’lumotlar tozaligini (data integrity)** ta’minlaydigan eng kuchli vosita.
 > NestJS esa uni `ValidationPipe` orqali juda qulay tarzda integratsiya qiladi.
 
----
-
-Xohlaysizmi, men sizga **real amaliy loyiha misoli** qilib (masalan, `User` CRUD) `class-validator` va `ValidationPipe`’ni to‘liq ishlatgan kod yozib beray?
