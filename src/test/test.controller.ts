@@ -1,12 +1,16 @@
-import { Controller, Post } from "@nestjs/common";
-import { TestService } from "./test.service";
+import { Controller, Get, UseGuards } from "@nestjs/common";
+import { MyDecorator } from "./CustomDecorator";
+import { AuthGuard } from "./MyGuard";
 
-@Controller("test")
-export class TestController {
-    constructor(private TestService : TestService){}
-    @Post()
-    loginFunction(){
-        return this.TestService.LoginFunction()
+
+@UseGuards(AuthGuard)
+@Controller('test')
+export class testController{
+    @Get()
+    @MyDecorator(['Superadmin'])
+    getFunction(){
+        return {
+            Status : "201"
+        }
     }
-
 }
