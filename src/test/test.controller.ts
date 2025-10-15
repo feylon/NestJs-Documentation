@@ -1,16 +1,21 @@
-import { Controller, Get, UseGuards } from "@nestjs/common";
-import { MyDecorator } from "./CustomDecorator";
-import { AuthGuard } from "./MyGuard";
+import { Controller, Get, SetMetadata, UseGuards } from "@nestjs/common";
+import { AuthGuard } from "./Guard";
 
+export const MyDecorator = (roles: string[]) => {
+    return SetMetadata("roles", roles)
+}
 
 @UseGuards(AuthGuard)
 @Controller('test')
-export class testController{
+export class testController {
+    constructor() { }
+
+    // @MyDecorator('salom')
+    @MyDecorator(['Xatolik'])
     @Get()
-    @MyDecorator(['Superadmin'])
-    getFunction(){
+    getFunction() {
         return {
-            Status : "201"
+            status: "OK"
         }
     }
 }

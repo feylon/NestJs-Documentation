@@ -6,8 +6,8 @@ import { AuthModule } from './Auth/Auth.module';
 import { PipeModule } from './Pipes/Pipes.module';
 import { ClassValidatorsModule } from './ClassValidators/ClassValidators.module';
 import { MappedTypesModule } from './MappedTypes/MappedTypes.module';
-import { TestModule } from './test/test.module';
 import { CustomDecoratorModule } from './CustomDecorator/CustomDecorator.module';
+import { TestModule } from './test/test.module';
 
 @Module({
   imports: [AuthModule,  PipeModule, ClassValidatorsModule, MappedTypesModule, TestModule, CustomDecoratorModule],
