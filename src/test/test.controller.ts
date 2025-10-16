@@ -1,21 +1,11 @@
-import { Controller, Get, SetMetadata, UseGuards } from "@nestjs/common";
-import { AuthGuard } from "./Guard";
+import { Controller, Post } from "@nestjs/common";
+import { TestService } from "./Test.service";
 
-export const MyDecorator = (roles: string[]) => {
-    return SetMetadata("roles", roles)
-}
-
-@UseGuards(AuthGuard)
 @Controller('test')
 export class testController {
-    constructor() { }
-
-    // @MyDecorator('salom')
-    @MyDecorator(['Xatolik'])
-    @Get()
-    getFunction() {
-        return {
-            status: "OK"
-        }
+    constructor(private testService: TestService) { }
+    @Post()
+    loginFunction() {
+        this.testService.loginFunction();
     }
 }

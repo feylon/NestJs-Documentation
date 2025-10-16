@@ -7,10 +7,11 @@ import { PipeModule } from './Pipes/Pipes.module';
 import { ClassValidatorsModule } from './ClassValidators/ClassValidators.module';
 import { MappedTypesModule } from './MappedTypes/MappedTypes.module';
 import { CustomDecoratorModule } from './CustomDecorator/CustomDecorator.module';
-import { TestModule } from './test/test.module';
+import { testModule } from './test/test.module';
+
 
 @Module({
-  imports: [AuthModule,  PipeModule, ClassValidatorsModule, MappedTypesModule, TestModule, CustomDecoratorModule],
+  imports: [AuthModule,  PipeModule, ClassValidatorsModule, MappedTypesModule, testModule, CustomDecoratorModule],
   controllers: [AppController],
   providers: [AppService],
 })
