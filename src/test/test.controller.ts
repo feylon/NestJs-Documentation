@@ -1,11 +1,25 @@
-import { Controller, Post } from "@nestjs/common";
-import { TestService } from "./Test.service";
+import { Controller, Get, Post, UseGuards } from "@nestjs/common";
+import { testService } from "./test.service";
+import { MyDecorator } from "./MyDecorator";
+import { AuthGuard } from "./AnyGuard";
+import { JWTAuthGuard } from "src/Auth/jwt-auth.guard";
 
 @Controller('test')
 export class testController {
-    constructor(private testService: TestService) { }
+    constructor(private readonly testService : testService){}
+
+
     @Post()
-    loginFunction() {
-        this.testService.loginFunction();
+    loginFunction(){
+        return this.testService.loginFunction()
+    }
+
+    @UseGuards(JWTAuthGuard,AuthGuard)
+    @MyDecorator('Superadmin1')
+    @Get()
+    GetProfileFunction(){
+        return {
+            Firstname : "Jamshid"
+        }
     }
 }

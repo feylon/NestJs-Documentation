@@ -1,11 +1,14 @@
 import { Module } from "@nestjs/common";
-import { JwtModule } from "@nestjs/jwt";
-import { PassportModule } from "@nestjs/passport";
-import { TestService } from "./Test.service";
-import { jwtstrategy } from "./jwt.strategy";
+import { JwtModule, JwtService } from "@nestjs/jwt";
+import { JwtStretegy } from "./JwtSrategy";
+import { testController } from "./test.controller";
+import { testService } from "./test.service";
 
 @Module({
-    imports : [JwtModule.register({}), PassportModule],
-    providers : [jwtstrategy,TestService]
+    imports: [
+        JwtModule.register({})
+    ],
+    controllers: [testController],
+    providers: [JwtStretegy, testService]
 })
-export class testModule {}
+export class testModule { }

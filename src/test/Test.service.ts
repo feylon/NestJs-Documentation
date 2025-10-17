@@ -1,16 +1,14 @@
 import { Injectable } from "@nestjs/common";
-import { JwtModule, JwtService } from "@nestjs/jwt";
+import { JwtService } from "@nestjs/jwt";
 
 @Injectable()
-export class TestService {
-    constructor(private jwtService : JwtService){}
+export class testService {
+    constructor(private readonly jwtservice: JwtService) { }
 
-    loginFunction(){
+
+    async loginFunction() {
         return {
-            accessToken : this.jwtService.sign({
-                id : "1",
-                role : "Admin"
-            })
+            accessToken: this.jwtservice.sign({ id: "1", role: "Superadmin" }, { expiresIn: "1d", secret: "Mysecret" })
         }
     }
 }
